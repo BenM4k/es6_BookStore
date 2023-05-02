@@ -10,7 +10,7 @@ module.exports = {
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
     rules: [
@@ -20,16 +20,14 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
-      }
-    ],
-    rules: [
-        {
-          test: /\.css$/i,
-          use: ['style-loader', 'css-loader'],
+            presets: ['@babel/preset-env'],
+          },
         },
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
-  }
+  },
 };
